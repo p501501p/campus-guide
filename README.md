@@ -7,23 +7,23 @@ Campus Guide เป็นแอปพลิเคชันสำหรับแ�
 ```text
 campus-guide/
 ├── app/
-│   ├── (public)/
-│   │   ├── about/
-│   │   │   └── page.tsx
-│   │   ├── place/
-│   │   │   ├── layout.tsx
-│   │   │   ├── page.tsx
-│   │   │   └── [slug]/
-│   │   │       └── page.tsx
-│   │   ├── layout.tsx
-│   │   └── page.tsx
 │   ├── (private)/
-│   │   ├── admin/
-│   │   │   └── layout.tsx
+│   │   ├── layout.tsx
 │   │   └── place-management/
 │   │       └── page.tsx
+│   ├── (public)/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   └── place/
+│   │       ├── layout.tsx
+│   │       ├── page.tsx
+│   │       └── [slug]/
+│   │           ├── page.tsx
+│   │           └── not-found.tsx
 │   ├── globals.css
-│   └── not-found.tsx
+│   └── layout.tsx
 ├── components/
 │   └── Breadcrumbs.tsx
 ├── data/
@@ -52,7 +52,7 @@ campus-guide/
 
 ## Layout ที่ใช้
 - Public layout: `app/(public)/layout.tsx`
-- Admin layout: `app/(private)/admin/layout.tsx`
+- Admin layout: `app/(private)/layout.tsx`
 
 ## Breadcrumbs
 ทุกหน้ามีคอมโพเนนต์ `Breadcrumbs` เพื่อแสดงตำแหน่งปัจจุบัน เช่น
