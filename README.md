@@ -1,39 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Campus Guide
 
-## Getting Started
+Campus Guide เป็นแอปพลิเคชันสำหรับแสดงข้อมูลสถานที่ต่าง ๆ ภายในมหาวิทยาลัย โดยแยกการใช้งานออกเป็นหน้าสำหรับผู้ใช้ทั่วไป (Public) และหน้าจัดการสำหรับแอดมิน (Admin / Backoffice)
 
-First, run the development server:
+## โครงสร้างโปรเจค
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```text
+campus-guide/
+├── app/
+│   ├── (public)/
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── place/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── (private)/
+│   │   ├── admin/
+│   │   │   └── layout.tsx
+│   │   └── place-management/
+│   │       └── page.tsx
+│   ├── globals.css
+│   └── not-found.tsx
+├── components/
+│   └── Breadcrumbs.tsx
+├── data/
+│   └── places.ts
+├── public/
+├── eslint.config.mjs
+├── next.config.ts
+├── next-env.d.ts
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tsconfig.json
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## หน้าที่สำคัญ
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Public
+- `/` หน้าแรก
+- `/about` หน้าเกี่ยวกับผู้พัฒนา
+- `/place` แสดงรายการสถานที่ทั้งหมด
+- `/place/[slug]` แสดงรายละเอียดของสถานที่แต่ละแห่ง
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Admin / Backoffice
+- `/place-management` หน้าจัดการรายการสถานที่สำหรับแอดมิน
 
-## Learn More
+## Layout ที่ใช้
+- Public layout: `app/(public)/layout.tsx`
+- Admin layout: `app/(private)/admin/layout.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+## Breadcrumbs
+ทุกหน้ามีคอมโพเนนต์ `Breadcrumbs` เพื่อแสดงตำแหน่งปัจจุบัน เช่น
+- หน้าแรก / สถานที่ / ห้องสมุดกลาง
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ข้อมูลสถานที่
+ข้อมูลสถานที่ถูกจัดเก็บในไฟล์:
+- `data/places.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## วิธีการรัน
 
-## Deploy on Vercel
+```bash
+npm install
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-## นายกิตติศักดิ์ ขันเเข็ง 67350031-4
+## ผู้พัฒนา
+- นายกิตติศักดิ์ ขันแข็ง
+- รหัสนักศึกษา: 673450031-4

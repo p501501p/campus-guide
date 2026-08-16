@@ -1,9 +1,19 @@
+import Link from "next/link";
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <h1 className="bg-blue-500 text-white p-4">Places Header</h1>
+      <br></br>
+      <h1 className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600">Campus Guide</h1>
       {children}
-      <h1 className="bg-blue-500 text-white p-4">Places Footer</h1>
+      <div className="mt-6">
+        <Link
+          href="/about"
+          className="inline-block rounded border border-blue-300 bg-blue-50 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-blue-700 transition hover:bg-blue-100"
+        >
+          About ME
+        </Link>
+      </div>
     </div>
   );
 }

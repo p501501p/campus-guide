@@ -12,15 +12,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: linear-gradient(180deg, #fdfdfd 0%, #fafbfc 45%, #f9f9fa 60%);
+  color: #0f172a;
   font-family: Arial, Helvetica, sans-serif;
 }
